@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # construct the argument parser
 parser = argparse.ArgumentParser()
-parser.add_argument('-i', '--input', help='path to input image/video')
+# parser.add_argument('-i', '--input', help='path to input image/video')
 parser.add_argument('-m', '--min-size', dest='min_size', default=800, 
                     help='minimum input size for the FasterRCNN network')
 args = vars(parser.parse_args())
