@@ -280,7 +280,6 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
 
             for i in range(4):
                 img = cv2.imread(cam[i])
-                print('reading image')
                 # sized = cv2.resize(img, (min_size, min_size))
                 # sized = cv2.cvtColor(sized, cv2.COLOR_BGR2RGB)
 
@@ -288,7 +287,8 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
                 #             # Because the first iteration is usually longer
                 #     boxes = do_detect(model, sized, 0.4, 0.6, use_cuda)
 
-            #     boxes, classes, labels = predict(img, model, device, 0.8)
+                boxes, classes, labels = predict(img, model, device, 0.8)
+                print('predicting image')
 
             #     imgfile = cam[i].split('/')[6:]
             #     imgname = '/'.join(imgfile)
