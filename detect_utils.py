@@ -33,16 +33,17 @@ def predict(image, model, device, detection_threshold):
 
 def draw_boxes(boxes, classes, labels, image):
     # read the image with OpenCV
-    image = cv2.cvtColor(np.asarray(image), cv2.COLOR_BGR2RGB)
+    # image = cv2.cvtColor(np.asarray(image), cv2.COLOR_BGR2RGB)
     for i, box in enumerate(boxes):
-        color = COLORS[labels[i]]
-        cv2.rectangle(
-            image,
-            (int(box[0]), int(box[1])),
-            (int(box[2]), int(box[3])),
-            color, 2
-        )
-        cv2.putText(image, classes[i], (int(box[0]), int(box[1]-5)),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2, 
-                    lineType=cv2.LINE_AA)
+        if labels[i] == 1:
+            color = COLORS[labels[i]]
+            cv2.rectangle(
+                image,
+                (int(box[0]), int(box[1])),
+                (int(box[2]), int(box[3])),
+                color, 2
+            )
+            cv2.putText(image, classes[i], (int(box[0]), int(box[1]-5)),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2, 
+                        lineType=cv2.LINE_AA)
     return image
