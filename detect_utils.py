@@ -47,7 +47,7 @@ def draw_boxes(boxes, classes, labels, image):
                 image,
                 (int(box[0]), int(box[1])),
                 (int(box[2]), int(box[3])),
-                (0, 255, 0), 2
+                (0, 0, 255), 2
             )
             # cv2.putText(image, classes[i], (int(box[0]), int(box[1]-5)),
             #             cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2, 
