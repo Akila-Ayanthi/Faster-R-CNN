@@ -287,7 +287,7 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
                 #             # Because the first iteration is usually longer
                 #     boxes = do_detect(model, sized, 0.4, 0.6, use_cuda)
 
-                boxes, classes, labels = predict(image, model, device, 0.8)
+                boxes, classes, labels = predict(sized, model, device, 0.8)
 
                 imgfile = cam[i].split('/')[6:]
                 imgname = '/'.join(imgfile)
