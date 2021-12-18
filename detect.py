@@ -20,6 +20,7 @@ model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True,
                                                     min_size=args['min_size'])
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.eval().to(device)
 
 path = "/home/dissana8/LAB/"
 file_name = 'LAB-GROUNDTRUTH.ref'
@@ -36,7 +37,7 @@ detect_utils.extract_frames(path, file_name, model, args['min_size'], savename, 
 
 # image = Image.open(args['input'])
 # image = cv2.imread(args['input'])
-# model.eval().to(device)
+# 
 # boxes, classes, labels = detect_utils.predict(image, model, device, 0.8)
 # image = detect_utils.draw_boxes(boxes, classes, labels, image)
 # # cv2.imshow('Image', image)
