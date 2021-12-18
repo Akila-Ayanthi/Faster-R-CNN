@@ -21,7 +21,7 @@ def predict(image, model, device, detection_threshold):
     # transform the image to tensor
     image = transform(image).to(device)
     image = image.unsqueeze(0) # add a batch dimension
-    print('prediction')
+    # print('prediction')
     outputs = model(image) # get the predictions on the image
     # print the results individually
     # print(f"BOXES: {outputs[0]['boxes']}")
@@ -289,50 +289,50 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
                 #     boxes = do_detect(model, sized, 0.4, 0.6, use_cuda)
 
                 boxes, classes, labels = predict(img, model, device, 0.8)
-                print('predicting image')
+                # print('predicting image')
 
-            #     imgfile = cam[i].split('/')[6:]
-            #     imgname = '/'.join(imgfile)
-            #     sname = savename + imgname
+                imgfile = cam[i].split('/')[6:]
+                imgname = '/'.join(imgfile)
+                sname = savename + imgname
 
-            #     image = draw_boxes(boxes, classes, labels, img)
+                image = draw_boxes(boxes, classes, labels, img)
 
-            #     # img, bbox = plot_boxes_cv2(img, boxes[0], sname, class_names)
+                # img, bbox = plot_boxes_cv2(img, boxes[0], sname, class_names)
 
-            #     image, cbbox = custom_bbox(gt[i], img, imgname)
+                image, cbbox = custom_bbox(gt[i], img, imgname)
 
-            #     # print(bbox)
+                # print(bbox)
 
-            #     if cbbox:
-            #         cbbox = np.array(cbbox)
-            #         bbox = np.array(boxes)
-            #         idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+                if cbbox:
+                    cbbox = np.array(cbbox)
+                    bbox = np.array(boxes)
+                    idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
 
-            #         for h in range(len(idx_gt_actual)):
-            #             t = idx_gt_actual[h]
-            #             text_c = cbbox[t]
-            #             print(text_c)
-            #             img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
-
-
-            #         # iou = get_iou(bbox, cbbox)
-            #         # print("iou")
-            #         # print(len(iou))
-
-            #         # for k in range(len(iou)):
-            #         #     img = cv2.putText(img, str(iou[k][1]), (iou[k][0][0], iou[k][0][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                    for h in range(len(idx_gt_actual)):
+                        t = idx_gt_actual[h]
+                        text_c = cbbox[t]
+                        print(text_c)
+                        img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
 
+                    # iou = get_iou(bbox, cbbox)
+                    # print("iou")
+                    # print(len(iou))
 
-            #     ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+                    # for k in range(len(iou)):
+                    #     img = cv2.putText(img, str(iou[k][1]), (iou[k][0][0], iou[k][0][1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
-            # savepath = "/home/dissana8/Faster-R-CNN/custom_bbox/"+c1_frame_no.split('/')[0]
 
-            # if not os.path.exists(savepath):
-            #     os.makedirs(savepath)
 
-            # plt.savefig(savepath+"/"+c1_frame_no.split('/')[-1])
-            # ax[0].cla()
-            # ax[1].cla()
-            # ax[2].cla()
-            # ax[3].cla()
+                ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+
+            savepath = "/home/dissana8/Faster-R-CNN/custom_bbox/"+c1_frame_no.split('/')[0]
+
+            if not os.path.exists(savepath):
+                os.makedirs(savepath)
+
+            plt.savefig(savepath+"/"+c1_frame_no.split('/')[-1])
+            ax[0].cla()
+            ax[1].cla()
+            ax[2].cla()
+            ax[3].cla()
