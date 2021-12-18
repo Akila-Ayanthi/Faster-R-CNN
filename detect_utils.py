@@ -19,8 +19,8 @@ transform = transforms.Compose([
 
 def predict(image, model, device, detection_threshold):
     # transform the image to tensor
-    # image = transform(image).to(device)
-    # image = image.unsqueeze(0) # add a batch dimension
+    image = transform(image).to(device)
+    image = image.unsqueeze(0) # add a batch dimension
     print('prediction')
     outputs = model(image) # get the predictions on the image
     # print the results individually
