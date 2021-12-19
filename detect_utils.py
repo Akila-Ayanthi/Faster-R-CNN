@@ -318,10 +318,9 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                             detections+=1
                         # img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
-
-                    
-
-        return detections/gt_actual*100
+    print(detections)
+    print(gt_actual)
+    return detections/gt_actual*100
 
         #     ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
