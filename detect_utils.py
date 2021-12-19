@@ -315,7 +315,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                         text_c = cbbox[t]
                         gt_actual+=1
                         # print(gt_actual)
-                        if round(ious_actual[h], 3)>=0.5:
+                        if round(ious_actual[h], 3)>=0.0:
                             print(ious_actual[h])
                             detections+=1
                             print(str(c1_frame_no))
