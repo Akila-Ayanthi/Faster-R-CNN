@@ -135,8 +135,8 @@ def match_bboxes(bbox_gt, bbox_pred, IOU_THRESH=0.0):
     '''
     n_true = bbox_gt.shape[0]
     n_pred = bbox_pred.shape[0]
-    print(n_true)
-    print(n_pred)
+    # print(n_true)
+    # print(n_pred)
     MAX_DIST = 1.0
     MIN_IOU = 0.0
 
@@ -253,7 +253,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
     for line in content:
         counter += 1
         if counter % 150 == 0:
-            print(counter)
+            # print(counter)
             s = line.split(" ")
             
             time = float(s[0])
@@ -314,7 +314,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                         t = idx_gt_actual[h]
                         text_c = cbbox[t]
                         gt_actual+=1
-                        if ious_actual>0.0:
+                        if ious_actual[h]>0.0:
                             detections+=1
                         # img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
