@@ -319,7 +319,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                             print(ious_actual[h])
                             detections+=1
                             # print(detections)
-                        # img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                        img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
     
 
