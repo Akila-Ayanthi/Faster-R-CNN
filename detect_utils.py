@@ -313,12 +313,12 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     for h in range(len(idx_gt_actual)):
                         t = idx_gt_actual[h]
                         text_c = cbbox[t]
-                        gt_actual+=1
-                        # print(gt_actual)
-                        if ious_actual[h]>0.1:
-                            print(ious_actual[h])
-                            detections+=1
-                            # print(detections)
+                        # gt_actual+=1
+                        # # print(gt_actual)
+                        # if ious_actual[h]>0.1:
+                        #     print(ious_actual[h])
+                        #     detections+=1
+                        #     # print(detections)
                         img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
     
@@ -336,6 +336,6 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         ax[2].cla()
         ax[3].cla()
 
-    print(detections)
-    print(gt_actual)
-    return detections/gt_actual*100
+    # print(detections)
+    # print(gt_actual)
+    # return detections/gt_actual*100
