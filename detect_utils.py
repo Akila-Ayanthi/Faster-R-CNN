@@ -183,7 +183,7 @@ def findClosest(time, camera_time_list):
     val = min(camera_time_list, key=lambda x: abs(x - time))
     return camera_time_list.index(val)
 
-def extract_frames(path ,file_name, model, min_size, savename, gt, device):
+def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, device):
     #===== process the index files of camera 1 ======#
     with open('/home/dissana8/LAB/Visor/cam1/index.dmp') as f:
         content = f.readlines()
@@ -326,7 +326,7 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
 
                 ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
-            savepath = "/home/dissana8/Faster-R-CNN/custom_bbox"+str(model)+"/"+c1_frame_no.split('/')[0]
+            savepath = "/home/dissana8/Faster-R-CNN/custom_bbox"+model_name+"/"+c1_frame_no.split('/')[0]
 
             if not os.path.exists(savepath):
                 os.makedirs(savepath)

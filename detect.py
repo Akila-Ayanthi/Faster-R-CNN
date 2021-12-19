@@ -49,7 +49,7 @@ gt.append(np.load('/home/dissana8/LAB/data/LAB/cam3_coords__.npy', allow_pickle=
 gt.append(np.load('/home/dissana8/LAB/data/LAB/cam4_coords__.npy', allow_pickle=True))
 
 fig, a = plt.subplots(4, 1)
-detect_utils.extract_frames(path, file_name, model, args['min_size'], savename, gt, device)
+detect_utils.extract_frames(path, file_name, model, args['model'], args['min_size'], savename, gt, device)
 
 # image = Image.open(args['input'])
 # image = cv2.imread(args['input'])
