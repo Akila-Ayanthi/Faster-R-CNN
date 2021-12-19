@@ -309,11 +309,11 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     cbbox = np.array(cbbox)
                     bbox = np.array(boxes)
                     idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+                    gt_actual+=len(cbbox)
 
                     for h in range(len(idx_gt_actual)):
                         t = idx_gt_actual[h]
                         text_c = cbbox[t]
-                        gt_actual+=1
                         # print(gt_actual)
                         if round(ious_actual[h], 3)>=0.0:
                             print(ious_actual[h])
