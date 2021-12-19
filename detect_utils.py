@@ -326,7 +326,7 @@ def extract_frames(path ,file_name, model, min_size, savename, gt, device):
 
                 ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
-            savepath = "/home/dissana8/Faster-R-CNN/custom_bbox/"+c1_frame_no.split('/')[0]
+            savepath = "/home/dissana8/Faster-R-CNN/custom_bbox"+str(model)+"/"+c1_frame_no.split('/')[0]
 
             if not os.path.exists(savepath):
                 os.makedirs(savepath)
