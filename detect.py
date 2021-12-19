@@ -17,13 +17,22 @@ parser.add_argument('-m', '--min-size', dest='min_size', default=800,
 
 args = vars(parser.parse_args())
 
-# download or load the model from disk
-if args['model'] == 'fasterrcnn_resnet50_fpn':
-    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True, min_size=args['min_size'])
-elif args['model'] == 'ssd300_vgg16':
-    model = torchvision.models.detection.ssd300_vgg16(pretrained=True)
+MODELS = {
+    "frcnn-resnet": torchvision.models.detection.fasterrcnn_resnet50_fpn,
+    "frcnn-mobilenet": torchvision.models.detection.fasterrcnn_mobilenet_v3_large_320_fpn,
+    "retinanet": torchvision.models.detection.retinanet_resnet50_fpn,
+    "ssd-mobilenet": torchvision.models.detection.ssdlite320_mobilenet_v3_large,
+    "ssd-vgg16": torchvision.models.detection.ssd300_vgg16,
+    "mrcnn-resnet": torchvision.models.detection.maskrcnn_resnet50_fpn    
+}
 
-# model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+# download or load the model from disk
+# if args['model'] == 'fasterrcnn_resnet50_fpn':
+#     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True, min_size=args['min_size'])
+# elif args['model'] == 'ssd300_vgg16':
+#     model = torchvision.models.detection.ssd300_vgg16(pretrained=True)
+
+model = MODELS[args['model']](pretrained=True)
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
