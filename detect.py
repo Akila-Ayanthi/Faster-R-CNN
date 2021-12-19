@@ -53,6 +53,7 @@ success_rate = detect_utils.extract_frames(path, file_name, model, args['model']
 
 f = open("success_rate.txt", "a")
 f.write("Success rate of "+args['model']+" : "+str(success_rate))
+f.write("\n")
 f.close()
 
 
