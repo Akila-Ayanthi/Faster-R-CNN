@@ -318,6 +318,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                         if round(ious_actual[h], 3)>=0.5:
                             print(ious_actual[h])
                             detections+=1
+                            print(str(c1_frame_no))
                             # print(detections)
                         img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
