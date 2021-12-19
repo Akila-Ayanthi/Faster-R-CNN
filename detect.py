@@ -10,14 +10,21 @@ import matplotlib.pyplot as plt
 
 # construct the argument parser
 parser = argparse.ArgumentParser()
-# parser.add_argument('-i', '--input', help='path to input image/video')
+parser.add_argument('-i', '--input', help='path to input image/video')
+parser.add_argument('-n', '--model', help='model to be loaded')
 parser.add_argument('-m', '--min-size', dest='min_size', default=800, 
                     help='minimum input size for the FasterRCNN network')
+
 args = vars(parser.parse_args())
 
 # download or load the model from disk
-model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True, 
-                                                    min_size=args['min_size'])
+if args['model'] == 'fasterrcnn_resnet50_fpn':
+    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True, min_size=args['min_size'])
+elif args['model'] == 'ssd300_vgg16':
+    model = torchvision.models.detection.ssd300_vgg16(pretrained=True)
+
+# model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.eval().to(device)
