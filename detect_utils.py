@@ -252,7 +252,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
     print('Extracting GT annotation ...')
     for line in content:
         counter += 1
-        if counter % 150 == 0:
+        if counter % 1000 == 0:
             # print(counter)
             s = line.split(" ")
             
@@ -321,19 +321,21 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                             # print(detections)
                         # img = cv2.putText(img, str(round(ious_actual[h], 3)), (text_c[0], text_c[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
+    
+
+            ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+
+        savepath = "/home/dissana8/Faster-R-CNN/custom_bbox_"+model_name+"/"+c1_frame_no.split('/')[0]
+
+        if not os.path.exists(savepath):
+            os.makedirs(savepath)
+
+        plt.savefig(savepath+"/"+c1_frame_no.split('/')[-1])
+        ax[0].cla()
+        ax[1].cla()
+        ax[2].cla()
+        ax[3].cla()
+
     print(detections)
     print(gt_actual)
     return detections/gt_actual*100
-
-        #     ax[i].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-
-        # savepath = "/home/dissana8/Faster-R-CNN/custom_bbox_"+model_name+"/"+c1_frame_no.split('/')[0]
-
-        # if not os.path.exists(savepath):
-        #     os.makedirs(savepath)
-
-        # plt.savefig(savepath+"/"+c1_frame_no.split('/')[-1])
-        # ax[0].cla()
-        # ax[1].cla()
-        # ax[2].cla()
-        # ax[3].cla()
