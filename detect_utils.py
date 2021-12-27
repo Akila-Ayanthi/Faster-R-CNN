@@ -343,9 +343,9 @@ def findClosest(time, camera_time_list):
 #     return detections/gt_actual*100
 
 def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, device):
-    cam1_det, cam2_det, cam3_det, cam4_det=0
-    cam1_gt, cam2_gt, cam3_gt, cam4_gt = 0
-    gt_actual=0
+    cam1_det, cam2_det, cam3_det, cam4_det= 0, 0, 0, 0
+    cam1_gt, cam2_gt, cam3_gt, cam4_gt = 0, 0, 0, 0
+    # gt_actual=0
     #===== process the index files of camera 1 ======#
     with open('/home/dissana8/LAB/Visor/cam1/index.dmp') as f:
         content = f.readlines()
@@ -524,7 +524,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     if round(ious_actual[h], 3)>=0.0:
                         print(ious_actual[h])
                         cam4_det+=1
-                        
+
     tot_det = cam1_det+cam2_det+cam3_det+cam4_det
     tot_gt = cam1_gt+cam2_gt+cam3_gt+cam4_gt
 
