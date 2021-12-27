@@ -440,7 +440,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         print(img)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
+        imgfile = im.split('/')[6:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[0], img, imgname)
@@ -464,7 +464,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
+        imgfile = im.split('/')[6:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[1], img, imgname)
@@ -488,7 +488,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
+        imgfile = im.split('/')[6:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[2], img, imgname)
@@ -512,7 +512,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
+        imgfile = im.split('/')[6:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[3], img, imgname)
