@@ -435,100 +435,102 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
 
     # view 01 success rate
     for ele in enumerate(c1_frame_no):
-        img = cv2.imread(ele)
+        print(ele)
+    #     img = cv2.imread(ele)
 
-        boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
-        imgname = '/'.join(imgfile)
-        sname = savename + imgname
-        image, cbbox = custom_bbox(gt[0], img, imgname)
-        if cbbox:
-                cbbox = np.array(cbbox)
-                bbox = np.array(boxes)
-                idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
-                cam1_gt+=len(cbbox)
+    #     boxes, classes, labels = predict(img, model, device, 0.8)
+    #     imgfile = ele.split('/')[6:]
+    #     imgname = '/'.join(imgfile)
+    #     sname = savename + imgname
+    #     image, cbbox = custom_bbox(gt[0], img, imgname)
+    #     if cbbox:
+    #             cbbox = np.array(cbbox)
+    #             bbox = np.array(boxes)
+    #             idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+    #             cam1_gt+=len(cbbox)
 
-                for h in range(len(idx_gt_actual)):
-                    t = idx_gt_actual[h]
-                    text_c = cbbox[t]
-                    # print(gt_actual)
-                    if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
-                        cam1_det+=1
+    #             for h in range(len(idx_gt_actual)):
+    #                 t = idx_gt_actual[h]
+    #                 text_c = cbbox[t]
+    #                 # print(gt_actual)
+    #                 if round(ious_actual[h], 3)>=0.0:
+    #                     print(ious_actual[h])
+    #                     cam1_det+=1
 
-    # view 02 success rate
-    for ele in enumerate(c2_frame_no):
-        img = cv2.imread(ele)
+    # # view 02 success rate
+    # for ele in enumerate(c2_frame_no):
+    #     img = cv2.imread(ele)
 
-        boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
-        imgname = '/'.join(imgfile)
-        sname = savename + imgname
-        image, cbbox = custom_bbox(gt[1], img, imgname)
-        if cbbox:
-                cbbox = np.array(cbbox)
-                bbox = np.array(boxes)
-                idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
-                cam2_gt+=len(cbbox)
+    #     boxes, classes, labels = predict(img, model, device, 0.8)
+    #     imgfile = ele.split('/')[6:]
+    #     imgname = '/'.join(imgfile)
+    #     sname = savename + imgname
+    #     image, cbbox = custom_bbox(gt[1], img, imgname)
+    #     if cbbox:
+    #             cbbox = np.array(cbbox)
+    #             bbox = np.array(boxes)
+    #             idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+    #             cam2_gt+=len(cbbox)
 
-                for h in range(len(idx_gt_actual)):
-                    t = idx_gt_actual[h]
-                    text_c = cbbox[t]
-                    # print(gt_actual)
-                    if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
-                        cam2_det+=1
+    #             for h in range(len(idx_gt_actual)):
+    #                 t = idx_gt_actual[h]
+    #                 text_c = cbbox[t]
+    #                 # print(gt_actual)
+    #                 if round(ious_actual[h], 3)>=0.0:
+    #                     print(ious_actual[h])
+    #                     cam2_det+=1
 
-    # view 03 success rate
-    for ele in enumerate(c3_frame_no):
-        img = cv2.imread(ele)
+    # # view 03 success rate
+    # for ele in enumerate(c3_frame_no):
+    #     img = cv2.imread(ele)
 
-        boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
-        imgname = '/'.join(imgfile)
-        sname = savename + imgname
-        image, cbbox = custom_bbox(gt[2], img, imgname)
-        if cbbox:
-                cbbox = np.array(cbbox)
-                bbox = np.array(boxes)
-                idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
-                cam3_gt+=len(cbbox)
+    #     boxes, classes, labels = predict(img, model, device, 0.8)
+    #     imgfile = ele.split('/')[6:]
+    #     imgname = '/'.join(imgfile)
+    #     sname = savename + imgname
+    #     image, cbbox = custom_bbox(gt[2], img, imgname)
+    #     if cbbox:
+    #             cbbox = np.array(cbbox)
+    #             bbox = np.array(boxes)
+    #             idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+    #             cam3_gt+=len(cbbox)
 
-                for h in range(len(idx_gt_actual)):
-                    t = idx_gt_actual[h]
-                    text_c = cbbox[t]
-                    # print(gt_actual)
-                    if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
-                        cam3_det+=1
+    #             for h in range(len(idx_gt_actual)):
+    #                 t = idx_gt_actual[h]
+    #                 text_c = cbbox[t]
+    #                 # print(gt_actual)
+    #                 if round(ious_actual[h], 3)>=0.0:
+    #                     print(ious_actual[h])
+    #                     cam3_det+=1
 
-    # view 01 success rate
-    for ele in enumerate(c4_frame_no):
-        img = cv2.imread(ele)
+    # # view 01 success rate
+    # for ele in enumerate(c4_frame_no):
+    #     img = cv2.imread(ele)
 
-        boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = ele.split('/')[6:]
-        imgname = '/'.join(imgfile)
-        sname = savename + imgname
-        image, cbbox = custom_bbox(gt[3], img, imgname)
-        if cbbox:
-                cbbox = np.array(cbbox)
-                bbox = np.array(boxes)
-                idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
-                cam4_gt+=len(cbbox)
+    #     boxes, classes, labels = predict(img, model, device, 0.8)
+    #     imgfile = ele.split('/')[6:]
+    #     imgname = '/'.join(imgfile)
+    #     sname = savename + imgname
+    #     image, cbbox = custom_bbox(gt[3], img, imgname)
+    #     if cbbox:
+    #             cbbox = np.array(cbbox)
+    #             bbox = np.array(boxes)
+    #             idx_gt_actual, idx_pred_actual, ious_actual, label = match_bboxes(cbbox, bbox)
+    #             cam4_gt+=len(cbbox)
 
-                for h in range(len(idx_gt_actual)):
-                    t = idx_gt_actual[h]
-                    text_c = cbbox[t]
-                    # print(gt_actual)
-                    if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
-                        cam4_det+=1
+    #             for h in range(len(idx_gt_actual)):
+    #                 t = idx_gt_actual[h]
+    #                 text_c = cbbox[t]
+    #                 # print(gt_actual)
+    #                 if round(ious_actual[h], 3)>=0.0:
+    #                     print(ious_actual[h])
+    #                     cam4_det+=1
 
-    tot_det = cam1_det+cam2_det+cam3_det+cam4_det
-    tot_gt = cam1_gt+cam2_gt+cam3_gt+cam4_gt
+    # tot_det = cam1_det+cam2_det+cam3_det+cam4_det
+    # tot_gt = cam1_gt+cam2_gt+cam3_gt+cam4_gt
 
-    return (tot_det/tot_gt)*100, (cam1_det/cam1_gt)*100, (cam2_det/cam2_gt)*100, (cam3_det/cam3_gt)*100, (cam4_det/cam4_gt)*100   
+    # return (tot_det/tot_gt)*100, (cam1_det/cam1_gt)*100, (cam2_det/cam2_gt)*100, (cam3_det/cam3_gt)*100, (cam4_det/cam4_gt)*100   
+    return 0
 
     #         image = draw_boxes(boxes, classes, labels, img)
 

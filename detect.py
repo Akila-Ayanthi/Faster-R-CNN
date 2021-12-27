@@ -48,7 +48,7 @@ gt.append(np.load('/home/dissana8/LAB/data/LAB/cam2_coords__.npy', allow_pickle=
 gt.append(np.load('/home/dissana8/LAB/data/LAB/cam3_coords__.npy', allow_pickle=True))
 gt.append(np.load('/home/dissana8/LAB/data/LAB/cam4_coords__.npy', allow_pickle=True))
 
-fig, a = plt.subplots(4, 1)
+# fig, a = plt.subplots(4, 1)
 success_rate, cam1_success_rate, cam2_success_rate, cam3_success_rate, cam4_success_rate = detect_utils.extract_frames(path, file_name, model, args['model'], args['min_size'], savename, gt, device)
 
 f = open("success_rate.txt", "a")
