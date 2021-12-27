@@ -435,7 +435,7 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
 
     # view 01 success rate
     for ele in enumerate(c1_frame_no):
-        print(ele[0])
+        print(ele[1])
     #     img = cv2.imread(ele)
 
     #     boxes, classes, labels = predict(img, model, device, 0.8)
