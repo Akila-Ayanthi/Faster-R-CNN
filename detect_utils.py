@@ -435,8 +435,9 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
 
     # view 01 success rate
     for ele in enumerate(c1_frame_no):
-        # print(ele[1])
-        img = cv2.imread(ele[1])
+        im = "/home/dissana8/LAB/Visor/cam1/"+ele[1]
+        img = cv2.imread(im)
+        print(img)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
         imgfile = ele.split('/')[6:]
@@ -459,7 +460,8 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
 
     # view 02 success rate
     for ele in enumerate(c2_frame_no):
-        img = cv2.imread(ele[1])
+        im = "/home/dissana8/LAB/Visor/cam2/"+ele[1]
+        img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
         imgfile = ele.split('/')[6:]
@@ -482,7 +484,8 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
 
     # view 03 success rate
     for ele in enumerate(c3_frame_no):
-        img = cv2.imread(ele[1])
+        im = "/home/dissana8/LAB/Visor/cam3/"+ele[1]
+        img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
         imgfile = ele.split('/')[6:]
@@ -503,9 +506,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                         print(ious_actual[h])
                         cam3_det+=1
 
-    # view 01 success rate
+    # view 04 success rate
     for ele in enumerate(c4_frame_no):
-        img = cv2.imread(ele[1])
+        im = "/home/dissana8/LAB/Visor/cam4/"+ele[1]
+        img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
         imgfile = ele.split('/')[6:]
