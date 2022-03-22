@@ -434,13 +434,22 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         c4_frame_no.append(c4_frames[frame_idx])
 
     # view 01 success rate
+    print("view 01 success rate")
     for ele in enumerate(c1_frame_no):
-        im = "/home/dissana8/LAB/Visor/cam1/"+ele[1]
+        #real images
+        # im = "/home/dissana8/LAB/Visor/cam1/"+ele[1]
+
+        #adversarial images
+        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam1/"+ele[1]
         img = cv2.imread(im)
-        print(img)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = im.split('/')[6:]
+
+        #real images
+        # imgfile = im.split('/')[6:]
+
+        #adv images
+        imgfile = im.split('/')[9:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[0], img, imgname)
@@ -455,16 +464,24 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     text_c = cbbox[t]
                     # print(gt_actual)
                     if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
                         cam1_det+=1
 
     # view 02 success rate
+    print("view 02 success rate")
     for ele in enumerate(c2_frame_no):
-        im = "/home/dissana8/LAB/Visor/cam2/"+ele[1]
+        # real images
+        # im = "/home/dissana8/LAB/Visor/cam2/"+ele[1]
+
+        #adversarial images
+        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam2/"+ele[1]
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = im.split('/')[6:]
+        #real images
+        # imgfile = im.split('/')[6:]
+
+        #adv images
+        imgfile = im.split('/')[9:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[1], img, imgname)
@@ -479,16 +496,25 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     text_c = cbbox[t]
                     # print(gt_actual)
                     if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
                         cam2_det+=1
 
     # view 03 success rate
+    print("view 03 success rate")
     for ele in enumerate(c3_frame_no):
-        im = "/home/dissana8/LAB/Visor/cam3/"+ele[1]
+        #real images
+        # im = "/home/dissana8/LAB/Visor/cam3/"+ele[1]
+
+        #adversarial images
+        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam3/"+ele[1]
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = im.split('/')[6:]
+
+        #real images
+        # imgfile = im.split('/')[6:]
+
+        #adv images
+        imgfile = im.split('/')[9:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[2], img, imgname)
@@ -503,16 +529,25 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     text_c = cbbox[t]
                     # print(gt_actual)
                     if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
                         cam3_det+=1
 
     # view 04 success rate
+    print("view 04 success rate")
     for ele in enumerate(c4_frame_no):
-        im = "/home/dissana8/LAB/Visor/cam4/"+ele[1]
+        #real images
+        # im = "/home/dissana8/LAB/Visor/cam4/"+ele[1]
+
+        #adversarial images
+        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam4/"+ele[1]
         img = cv2.imread(im)
 
         boxes, classes, labels = predict(img, model, device, 0.8)
-        imgfile = im.split('/')[6:]
+
+        #real images
+        # imgfile = im.split('/')[6:]
+
+        #adv images
+        imgfile = im.split('/')[9:]
         imgname = '/'.join(imgfile)
         sname = savename + imgname
         image, cbbox = custom_bbox(gt[3], img, imgname)
@@ -527,7 +562,6 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
                     text_c = cbbox[t]
                     # print(gt_actual)
                     if round(ious_actual[h], 3)>=0.0:
-                        print(ious_actual[h])
                         cam4_det+=1
 
     tot_det = cam1_det+cam2_det+cam3_det+cam4_det
