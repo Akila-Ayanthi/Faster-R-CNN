@@ -51,7 +51,7 @@ gt.append(np.load('/home/dissana8/LAB/data/LAB/cam4_coords__.npy', allow_pickle=
 # fig, a = plt.subplots(4, 1)
 success_rate, cam1_success_rate, cam2_success_rate, cam3_success_rate, cam4_success_rate = detect_utils.extract_frames(path, file_name, model, args['model'], args['min_size'], savename, gt, device)
 
-f = open("success_rate_adv.txt", "a")
+f = open("success_rate_adv_Daedulus.txt", "a")
 f.write("Success rate of "+args['model']+" : "+str(success_rate)+"\n")
 f.write("Success rate of view 01" +": "+str(cam1_success_rate)+"\n")
 f.write("Success rate of view 02" +": "+str(cam2_success_rate)+"\n")
