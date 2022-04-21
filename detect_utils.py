@@ -453,10 +453,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # imgfile = im.split('/')[6:]
 
         #adv images TOG
-        # imgfile = im.split('/')[9:]
+        imgfile = im.split('/')[9:]
 
         #adv images Daedulus
-        imgfile = im.split('/')[6:]
+        # imgfile = im.split('/')[6:]
 
         imgname = '/'.join(imgfile)
         sname = savename + imgname
@@ -492,10 +492,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # imgfile = im.split('/')[6:]
 
         #adv images TOG
-        # imgfile = im.split('/')[9:]
+        imgfile = im.split('/')[9:]
 
         #adv images Daedulus
-        imgfile = im.split('/')[6:]
+        # imgfile = im.split('/')[6:]
 
         imgname = '/'.join(imgfile)
         sname = savename + imgname
@@ -532,10 +532,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # imgfile = im.split('/')[6:]
 
         #adv images TOG
-        # imgfile = im.split('/')[9:]
+        imgfile = im.split('/')[9:]
 
         #adv images Daedulus
-        imgfile = im.split('/')[6:]
+        # imgfile = im.split('/')[6:]
 
         imgname = '/'.join(imgfile)
         sname = savename + imgname
@@ -572,10 +572,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # imgfile = im.split('/')[6:]
 
         #adv images TOG
-        # imgfile = im.split('/')[9:]
+        imgfile = im.split('/')[9:]
 
         #adv images Daedulus
-        imgfile = im.split('/')[6:]
+        # imgfile = im.split('/')[6:]
 
         imgname = '/'.join(imgfile)
         sname = savename + imgname
