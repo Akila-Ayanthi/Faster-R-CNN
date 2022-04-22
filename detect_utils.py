@@ -440,9 +440,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # im = "/home/dissana8/LAB/Visor/cam1/"+ele[1]
 
         #adversarial images TOG
-        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam1/"+ele[1]
+        # im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam1/"+ele[1]
 
         #adversarial images Daedulus
+        im = "/home/dissana8/pytorch-YOLOv4/Daedalus_Images/cam1/"+ele[1]
         # im = "/home/dissana8/Daedalus-physical/Adv_Images/cam1/"+ele[1]
 
         img = cv2.imread(im)
@@ -481,9 +482,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # im = "/home/dissana8/LAB/Visor/cam2/"+ele[1]
 
         #adversarial images
-        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam2/"+ele[1]
+        # im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam2/"+ele[1]
 
         #adversarial images Daedulus
+        im = "/home/dissana8/pytorch-YOLOv4/Daedalus_Images/cam2/"+ele[1]
         # im = "/home/dissana8/Daedalus-physical/Adv_Images/cam2/"+ele[1]
         img = cv2.imread(im)
 
@@ -520,9 +522,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # im = "/home/dissana8/LAB/Visor/cam3/"+ele[1]
 
         #adversarial images
-        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam3/"+ele[1]
+        # im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam3/"+ele[1]
 
         #adversarial images Daedulus
+        im = "/home/dissana8/pytorch-YOLOv4/Daedalus_Images/cam3/"+ele[1]
         # im = "/home/dissana8/Daedalus-physical/Adv_Images/cam3/"+ele[1]
         img = cv2.imread(im)
 
@@ -560,9 +563,10 @@ def extract_frames(path ,file_name, model, model_name, min_size, savename, gt, d
         # im = "/home/dissana8/LAB/Visor/cam4/"+ele[1]
 
         #adversarial images
-        im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam4/"+ele[1]
+        # im = "/home/dissana8/TOG/Adv_images/vanishing/LAB/Visor/cam4/"+ele[1]
 
         #adversarial images Daedulus
+        im = "/home/dissana8/pytorch-YOLOv4/Daedalus_Images/cam4/"+ele[1]
         # im = "/home/dissana8/Daedalus-physical/Adv_Images/cam4/"+ele[1]
         img = cv2.imread(im)
 
